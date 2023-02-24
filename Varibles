@@ -26,7 +26,7 @@ pcall(function()
 
 		local function SetWebhook()
 			writefile("InfernoXWebhooking.txt", CurrentTime)
-			print("[Wolf] Debug: Webhook Delay Set at "..CurrentTime)
+			print("[Inferno X] Debug: Webhook Delay Set at "..CurrentTime)
 			Webhook = GlobalWebhook
 		end
 
@@ -60,7 +60,7 @@ local function getexploit()
 		("Other")
 end
 
-print("[Wolf Hub] Debug: Detected Executor: "..getexploit())
+print("[Inferno X] Debug: Detected Executor: "..getexploit())
 
 function SendMessage(Message, Botname)
 	local Name
@@ -132,7 +132,7 @@ local function CreateWindow()
 	repeat task.wait() until VCurrentVersion
 
 	local Window = Rayfield:CreateWindow({
-		Name = "Wolf Hub - "..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name.." - "..VCurrentVersion,
+		Name = "Wolf Hub | BETA - "..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name.." - "..VCurrentVersion,
 		LoadingTitle = "Wolf Hub",
 		LoadingSubtitle = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
 		ConfigurationSaving = {
@@ -296,7 +296,7 @@ local function CreateWindow()
 			end
 		end)
 
-		local Credits = Window:CreateTab("Suggestions")
+		local Credits = Window:CreateTab("Suggestions", 4483362458)
 
 		Credits:CreateInput({
 			Name = "Suggestion",
@@ -313,7 +313,7 @@ local function CreateWindow()
 
 							local function SetSuggestionsWebhook()
 								Webhook = SuggestionsWebhook
-								local success, result = pcall(SendMessage, "[Inferno X] Data: "..((Player.Name ~= Player.DisplayName and Player.DisplayName) or "Unknown.."..Player.Name:sub(-2, -1)).." suggested "..Text.." on "..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name, "Suggestion")
+								local success, result = pcall(SendMessage, "[Wolf] Data: "..((Player.Name ~= Player.DisplayName and Player.DisplayName) or "Unknown.."..Player.Name:sub(-2, -1)).." suggested "..Text.." on "..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name, "Suggestion")
 								if success then
 									Notify("Successfully Sent Suggestion", 5)
 									writefile("InfernoXWebhooking2.txt", CurrentTime)
@@ -349,4 +349,4 @@ end
 
 return Player, Rayfield, Click, comma, Notify, CreateWindow, CurrentVersion
 
--- local Player, Rayfield, Click, comma, Notify, CreateWindow, CurrentVersion = loadstring(game:HttpGet("https://raw.githubusercontent.com/Podroka626/Variables-One-fruit/main/Varibles"))()
+-- local Player, Rayfield, Click, comma, Notify, CreateWindow, CurrentVersion = loadstring(game:HttpGet("https://raw.githubusercontent.com/alyssagithub/Scripts/main/Inferno%20X%20Scripts/Variables.lua"))()
